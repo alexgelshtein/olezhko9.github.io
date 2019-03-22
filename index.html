@@ -93,7 +93,7 @@
 
         </div>
         <div class="main">
-            <div class="video_content">
+            <div class="video_content" id="stream_video">
             </div>
             <div class="video_description">
             </div>
@@ -115,6 +115,14 @@
         </div>
 
     </div>
-
+    <script>
+        document.body.onresize = function() {
+            let streamVideo = document.getElementById('stream_video');
+            let streamVideoWidth = streamVideo.offsetWidth;
+            let streamVideoHeight = streamVideo.offsetWidth / 16 * 9;
+            streamVideo.style.height = streamVideoHeight + 'px';
+            console.log(streamVideoHeight);
+        }
+    </script>
 
 </body></html>
