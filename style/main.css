@@ -12,16 +12,17 @@ a {
 }
 
 header {
-    height: 64px;
+    width: 96%;
+    display: inline-block;
     background-color: coral;
     position: relative;
-    padding: 0 30px;
+    padding: 0 2%;
 }
 
 .logo {
     display: inline-block;
     float: left;
-    margin-right: 50px;
+    margin-right: 5%;
 }
 
 nav ul {
@@ -35,19 +36,18 @@ nav li {
 }
 
 nav li a {
-    display: block;
-    line-height: 64px;
+    display: inline-block;
+    line-height: 68px;
     letter-spacing: 1px;
     color: white;
     text-transform: uppercase;
 }
 
 #search {
-    display: inline-block;
     height: 30px;
-    margin: 17px 0;
+    margin: 19px 0;
     float: right;
-    width: 200px;
+    width: 300px;
     padding-left: 10px;
     overflow: hidden;
     font-style: italic;
