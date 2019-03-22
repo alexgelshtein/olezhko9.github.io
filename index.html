@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Адаптивная верстка</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/media.css">
 </head>
 
 <body>
@@ -92,37 +93,43 @@
             </div>
 
         </div>
-        <div class="main">
-            <div class="video_content" id="stream_video">
+        <div class="content">
+
+            <div class="main">
+                <div class="video_content" id="stream_video">
+                </div>
+                <div class="video_description">
+                </div>
             </div>
-            <div class="video_description">
+
+            <div class="chat">
+                <div class="chat-messages">
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                    <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
+                </div>
+                <div class="input-message"><input type="text" placeholder="Отправить сообщение"></div>
             </div>
-        </div>
-        <div class="chat">
-            <div class="messages">
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-                <div class="chat-message"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus eligendi asperiores corporis reprehenderit nemo nesciunt harum ea, dolore nisi!</span></div>
-            </div>
-            <div class="input-message"><input type="text" placeholder="Отправить сообщение"></div>
         </div>
 
     </div>
     <script>
-        document.body.onresize = function() {
+        let resizeVideo = function() {
             let streamVideo = document.getElementById('stream_video');
             let streamVideoWidth = streamVideo.offsetWidth;
             let streamVideoHeight = streamVideo.offsetWidth / 16 * 9;
             streamVideo.style.height = streamVideoHeight + 'px';
-            console.log(streamVideoHeight);
+            console.log(streamVideoWidth);
         }
+        document.addEventListener("DOMContentLoaded", resizeVideo);
+        window.addEventListener("resize", resizeVideo);
     </script>
 
 </body></html>
