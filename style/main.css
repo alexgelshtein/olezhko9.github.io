@@ -29,7 +29,7 @@ header {
 .logo {
     display: inline-block;
     float: left;
-    margin-right: 5%;
+    margin-right: 3%;
 }
 
 nav ul {
@@ -39,7 +39,7 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 nav li a {
@@ -51,11 +51,25 @@ nav li a {
     font-size: 14px;
 }
 
-#search {
-    height: 30px;
-    margin: 19px 0;
+#menu-toggle {
     float: right;
-    width: 300px;
+    width: 46px;
+    height: 46px;
+    margin: 10px 0;
+    background-color: white;
+    display: none;
+    cursor: pointer;
+}
+
+.display-menu {
+    display: block;
+}
+
+#search {
+    height: 48px;
+    margin: 10px 0;
+    float: right;
+    width: 25%;
     font-style: italic;
 }
 
@@ -80,12 +94,10 @@ nav li a {
     height: 48px;
     width: 100%;
     margin-top: 10px;
-    border: 1px solid blue;
 }
 
 .chanel_avatar {
     float: left;
-
 }
 
 .chanel_avatar > img {
@@ -116,12 +128,18 @@ nav li a {
 
 .video_content {
     width: 100%;
-    background-color: yellowgreen
+    background-color: yellowgreen;
+}
+
+.video_content > img {
+    width: 100%;
+    height: 100%;
 }
 
 .video_description {
     height: 70px;
     background-color: white;
+    padding: 2%;
 }
 
 .chat {

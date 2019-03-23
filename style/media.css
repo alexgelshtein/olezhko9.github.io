@@ -17,11 +17,42 @@
     }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1000px) {
+
+    nav ul {
+        position: absolute;
+        left: 0;
+        top: 68px;
+        z-index: 10;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul li {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: coral;
+        border-top: 1px solid white;
+    }
+
+    nav li a {
+        line-height: 48px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #search {
+        float: left;
+        width: 50%;
+    }
 
     .content {
         padding: 1%;
-        height: auto;
+        height: 100%;
         max-height: 100%;
         overflow-y: scroll;
     }
@@ -38,7 +69,21 @@
     }
 
     .chat {
-        bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .chat-messages {
+        height: auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .side {
+        display: none;
+    }
+
+    .content {
         width: 100%;
     }
 }
