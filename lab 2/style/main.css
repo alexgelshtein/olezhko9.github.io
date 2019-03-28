@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    padding-bottom: 10%;
 }
 
 nav {
@@ -35,6 +36,7 @@ header h1 {
 }
 
 .course-header {
+    margin-top: 25vh;
     color: #ffffff;
 }
 
@@ -75,6 +77,10 @@ header h1 {
         font-size: 30px;
     }
 
+    .course-header {
+        margin-top: 30%;
+    }
+
     .course-header p {
         font-size: 24px;
     }
@@ -95,6 +101,12 @@ header h1 {
 }
 
 @media (max-width: 420px) {
+    .head-img {
+        height: auto;
+        background: none;
+        background-color: rgba(92, 77, 66, .7);
+    }
+
     .container {
         padding: 0;
     }
