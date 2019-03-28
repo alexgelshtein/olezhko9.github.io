@@ -1,12 +1,110 @@
 .head-img {
     height: 100vh;
-    background: linear-gradient(to bottom,rgba(92,77,66,.7) 0,rgba(92,77,66,.7) 100%), url(../images/workspace.jpg);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, .7) 0, rgba(92, 77, 66, .7) 100%), url(../images/workspace.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
 }
 
-#nav-bar {
+nav {
     padding: 1rem;
 }
 
-#nav-bar a {
+nav a {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+nav a:hover {
+    color: #f24516;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+
+.show,
+.collapsing {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5vw;
+    letter-spacing: 3px;
+}
+
+.course-header {
     color: #ffffff;
+}
+
+
+.decor-hr {
+    max-width: 50%;
+    border-width: 0.3em;
+    border-color: coral;
+    margin: 20px auto;
+}
+
+.course-header p {
+    font-size: 1.5em;
+}
+
+.btn-header {
+    background-color: coral;
+    font-size: 1.5em;
+    padding: 7px 15px 11px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-header:hover {
+    color: #fff;
+    background-color: #f24516;
+}
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 990px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .course-header p {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 575px) {
+    nav {
+        background-color: #fff;
+    }
+
+    nav a {
+        color: #000;
+    }
+
+    .navbar-toggler-icon {
+        background-color: coral;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 0;
+    }
+
+    header h1 {
+        letter-spacing: 0;
+        font-size: 18px;
+    }
+
+    .course-header p {
+        font-size: 16px;
+    }
 }
