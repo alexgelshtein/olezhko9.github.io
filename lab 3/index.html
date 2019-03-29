@@ -36,40 +36,6 @@
             ctx.fillStyle = "yellow"
             ctx.fillRect(cross.x, cross.y, canvas.width, canvas.height);
 
-            getQoute()
-                .then((quote) => {
-                    console.log(quote);
-                    quoteLengthPX = ctx.measureText(quote).width;
-
-                    ctx.font = "30px Comic Sans MS";
-                    ctx.fillStyle = '#fff';
-                    ctx.textAlign = 'center';
-
-                    const words = quote.split(' ');
-                    let line = "";
-                    let lines = [];
-
-                    for (let i = 0; i < words.length; i++) {
-                        let testLine = line + words[i] + " ";
-                        let testWidth = ctx.measureText(testLine).width;
-                        if (testWidth > 4 / 5 * canvas.width) {
-                            lines.push(line);
-                            line = words[i] + " ";
-                        } else {
-                            line = testLine;
-                        }
-                    }
-                    lines.push(line);
-
-                    const lineHeight = 30;
-                    let marginTop = canvas.height / 2 - lines.length / 2 * lineHeight;
-                    for (let i = 0; i < lines.length; i++) {
-                        ctx.fillText(lines[i], canvas.width / 2, marginTop);
-                        marginTop += lineHeight;
-                    }
-                })
-                .catch((err) => console.error(err));
-
             photoSizes = [
                 [cross.x, cross.y],
                 [canvas.width - cross.x, cross.y],
@@ -84,12 +50,14 @@
                 [cross.x, cross.y],
             ]
 
+            //            Получаем картинки нужных размеров
             Promise.all(photoSizes.map(getPhoto))
                 .then(photos => {
                     for (let i = 0; i < photos.length; i++) {
                         photos[i].pin = photoPins[i];
                     }
 
+                    //                    Отрисовываем полученные картинки в их области
                     Promise.all(photos.map((photo) => {
                         let img = new Image();
                         console.log(photo.url, photo.pin[0], photo.pin[1]);
@@ -100,6 +68,41 @@
 
                         img.src = photo.url;
                     }));
+                    //                Ищем цитату и рисуем ее поверх картинок
+                }).then(() => {
+                    getQoute()
+                        .then((quote) => {
+                            console.log(quote);
+                            quoteLengthPX = ctx.measureText(quote).width;
+
+                            ctx.font = "30px Comic Sans MS";
+                            ctx.fillStyle = '#fff';
+                            ctx.textAlign = 'center';
+
+                            const words = quote.split(' ');
+                            let line = "";
+                            let lines = [];
+
+                            for (let i = 0; i < words.length; i++) {
+                                let testLine = line + words[i] + " ";
+                                let testWidth = ctx.measureText(testLine).width;
+                                if (testWidth > 4 / 5 * canvas.width) {
+                                    lines.push(line);
+                                    line = words[i] + " ";
+                                } else {
+                                    line = testLine;
+                                }
+                            }
+                            lines.push(line);
+
+                            const lineHeight = 30;
+                            let marginTop = canvas.height / 2 - lines.length / 2 * lineHeight;
+                            for (let i = 0; i < lines.length; i++) {
+                                ctx.fillText(lines[i], canvas.width / 2, marginTop);
+                                marginTop += lineHeight;
+                            }
+                        })
+                        .catch((err) => console.error(err));
                 });
         });
 
