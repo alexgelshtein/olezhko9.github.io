@@ -69,6 +69,38 @@
                     }
                 })
                 .catch((err) => console.error(err));
+
+            photoSizes = [
+                [cross.x, cross.y],
+                [canvas.width - cross.x, cross.y],
+                [cross.x, canvas.height - cross.y],
+                [canvas.width - cross.x, canvas.height - cross.y],
+            ]
+
+            photoPins = [
+                [0, 0],
+                [cross.x, 0],
+                [0, cross.y],
+                [cross.x, cross.y],
+            ]
+
+            Promise.all(photoSizes.map(getPhoto))
+                .then(photos => {
+                    for (let i = 0; i < photos.length; i++) {
+                        photos[i].pin = photoPins[i];
+                    }
+
+                    Promise.all(photos.map((photo) => {
+                        let img = new Image();
+                        console.log(photo.url, photo.pin[0], photo.pin[1]);
+
+                        img.onload = function() {
+                            ctx.drawImage(img, photo.pin[0], photo.pin[1]);
+                        }
+
+                        img.src = photo.url;
+                    }));
+                });
         });
 
         let getQoute = function() {
@@ -89,6 +121,15 @@
 
                 xhr.send();
             });
+        }
+
+        let getPhoto = function(photoSize) {
+            const photoWidth = photoSize[0],
+                photoHeight = photoSize[1];
+            const numImagesAvailable = 295;
+            let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
+
+            return fetch(`https://source.unsplash.com/collection/3178572/${photoWidth}x${photoHeight}/?sig=${randomImageIndex}`)
         }
 
     </script>
