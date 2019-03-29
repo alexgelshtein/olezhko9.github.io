@@ -35,6 +35,30 @@
 
             ctx.fillStyle = "yellow"
             ctx.fillRect(cross.x, cross.y, canvas.width, canvas.height);
+
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://api.forismatic.com/api/1.0/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
+            let body = 'method=' + encodeURIComponent('getQuote') +
+                '&format=' + encodeURIComponent('json') +
+                '&lang=' + encodeURIComponent('ru');
+
+            xhr.onload = function() {
+                if (xhr.status != 200) {
+                    console.log(xhr.status + ': ' + xhr.statusText);
+                } else {
+                    console.log(xhr.responseText);
+                }
+            }
+
+            xhr.onerror = function() {
+                console.log('Ошибка ' + this.status);
+            }
+
+            xhr.send(body);
         });
 
     </script>
