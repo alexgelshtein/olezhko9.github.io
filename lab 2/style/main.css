@@ -2,6 +2,10 @@ img {
     max-width: 100%;
 }
 
+section {
+    padding: 7vh 0;
+}
+
 .decor-hr {
     max-width: 30%;
     border-width: 0.3em;
@@ -95,7 +99,6 @@ header h1 {
 #description {
     background-color: coral;
     min-height: 50vh;
-    padding-top: 8vh;
     color: #fff;
 }
 
@@ -105,6 +108,42 @@ header h1 {
 
 /*description end*/
 
+/*labs start*/
+
+.fab {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+}
+
+.fab:hover {
+    color: #f24516;
+}
+
+.fa-css3-alt {
+    color: #3596D0;
+}
+
+.fa-bootstrap {
+    color: #5B3E84;
+}
+
+.fa-js-square {
+    color: #F7E018;
+}
+
+.fa-php {
+    color: #4F5B93;
+}
+
+.fa-markdown {
+    color: #3497DA;
+}
+
+#labs h3 {
+    margin-bottom: 0.5em;
+}
+
+/*labs end*/
 
 @media (max-width: 1200px) {
     header h1 {

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--    Awesome font-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- jQuery library -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -30,9 +32,9 @@
 
                 <div class="collapse navbar-collapse" id="menu-bar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="" class="nav-link active">About</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Languages</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#description" class="nav-link active">Описание</a></li>
+                        <li class="nav-item"><a href="#labs" class="nav-link">Лабораторные</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Преподаватель</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,6 +66,42 @@
                     <p>Первые три лабораторные работы нужно загружать в github pages. Остальные лабораторные работы - либо на удаленном сервере, либо локально.</p>
 
                     <p>При сдаче лабораторных работ будет учитываться история коммитов (могу посмотреть диффы). И лучше написать свой кривой код, чем копипастить чужое. При обнаружении копипасты могу поставить ноль баллов за лабораторную работу без возможности исправления. По любой строчке в коде может быть задан вопрос, не пишите и не копируйте, чего не понимаете.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="labs">
+        <div class="container text-center">
+            <h2>Список лабораторных работ</h2>
+            <hr class="decor-hr">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>Лабораторная работа 1: Адаптивная верстка</h3>
+                    <p>Нужно разработать адаптивную вёрстку компоновки (wireframe) web-приложения. В решении должно быть минимум 4 блока. Пользуясь медиа-запросом, нужно реализовать адаптивную верстку.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Лабораторная работа 2: Одностраничный сайт</h3>
+                    <p>Нужно сделать посадочную страницу для продукта или услуги с помощью CSS фреймворка (bootstrap или materialize). Страница должна быть адаптивной и органично отображаться на всех размерах экрана.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-js-square"></i>
+                    <h3>Лабораторная работа 3: Генератор контента</h3>
+                    <p>Требуется генерировать коллажи изображений с цитатами с помощью элемента canvas с возможностью сохранения контента на чистом javascript (без html и css).</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-php"></i>
+                    <h3>Лабораторная работа 4: Новостной портал</h3>
+                    <p>Нужно разработать новостной портал на PHP (на чистом или с фреймворками) с админкой, из которой можно добавлять и удалять новости (без авторизации). Новость должна иметь заголовок и сам текст.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-markdown"></i>
+                    <h3>Лабораторная работа 5: Markdown Editor</h3>
+                    <p>Нужно реализовать функциональность просмотра и редактирования markdown документов с возможностью хранения их на сервере. То есть обычный веб-сервис без авторизации с общим списком всех md документов.</p>
                 </div>
             </div>
         </div>
