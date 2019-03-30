@@ -60,11 +60,13 @@
                             ctx.drawImage(img, photo.pin[0], photo.pin[1]);
                         }
 
+                        img.crossOrigin = 'anonymous';
                         img.src = photo.url;
                     }));
+
                     //                Ищем цитату и рисуем ее поверх картинок
                 }).then(() => {
-                    getQoute()
+                    return getQoute()
                         .then((response) => {
                             if (response.ok)
                                 return response.text();
@@ -103,7 +105,16 @@
                             }
                         })
                         .catch((err) => console.error(err));
+
+
+                }).then(() => {
                     waitMsg.hidden = 'true';
+                    var dataURL = canvas.toDataURL("image/png");
+                    var link = document.createElement("a");
+                    link.innerHTML = "Скачать";
+                    link.href = dataURL;
+                    link.download = new Date().getTime();
+                    document.body.appendChild(link);
                 });
         });
 
@@ -121,8 +132,5 @@
 
             return fetch(`https://source.unsplash.com/collection/357786/${photoWidth}x${photoHeight}/?sig=${randomImageIndex}`);
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
