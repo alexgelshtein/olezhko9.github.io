@@ -20,7 +20,7 @@
 
     <header class="head-img">
         <!--       Navigation-->
-        <nav class="navbar navbar-expand-sm navbar-fixed-top navbat-light">
+        <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container">
                 <a href="#page-top" class="navbar-brand">WebDev</a>
 
@@ -29,7 +29,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="menu-bar">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="" class="nav-link active">About</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Languages</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
@@ -45,7 +45,7 @@
                     <h1 class="text-uppercase"><b>Веб разработка в университете информационных технологий, механики и оптики</b></h1>
                     <hr class="decor-hr">
                     <p>Всего за семестр нужно сдать пять лабораторных работ. При сдаче лабораторной работы после дедлайна за каждый пропуск будет отниматься по три балла за каждый долг.</p>
-                    <a href="" class="btn btn-header">Перейти к курсу</a>
+                    <a href="#description" class="btn btn-header">Перейти к курсу</a>
                 </div>
             </div>
         </div>
@@ -68,4 +68,16 @@
             </div>
         </div>
     </section>
+    <script>
+        let nav = document.getElementsByTagName('nav')[0];
+        document.body.onscroll = function() {
+            console.log(nav);
+            const maxScrollTop = 200;
+            if (document.body.scrollTop > maxScrollTop || document.documentElement.scrollTop > maxScrollTop) {
+                nav.classList.add('navbar-scrolled');
+            } else {
+                nav.classList.remove('navbar-scrolled');
+            }
+        };
+    </script>
 </body></html>

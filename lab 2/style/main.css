@@ -18,17 +18,19 @@ img {
 
 /*header start*/
 .head-img {
-    min-height: 80vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom, rgba(92, 77, 66, .7) 0, rgba(92, 77, 66, .7) 100%), url(../images/workspace.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
     padding-bottom: 12%;
+    background-blend-mode: darken
 }
 
 nav {
     padding: 1rem;
+    transition: 0.5s;
 }
 
 nav a {
@@ -44,6 +46,14 @@ nav a:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
 }
 
+.navbar-scrolled {
+    background-color: #fff;
+}
+
+.navbar-scrolled a {
+    color: #000;
+}
+
 .show,
 .collapsing {
     text-align: center;
@@ -55,7 +65,7 @@ header h1 {
 }
 
 .course-header {
-    margin-top: 25vh;
+    padding-top: 30%;
     color: #ffffff;
 }
 
@@ -108,7 +118,7 @@ header h1 {
     }
 
     .course-header {
-        margin-top: 30%;
+        padding-top: 30%;
     }
 
     .course-header p {
