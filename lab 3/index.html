@@ -24,17 +24,7 @@
             console.log(cross);
 
             var ctx = canvas.getContext("2d");
-            ctx.fillStyle = "red"
-            ctx.fillRect(0, 0, cross.x, cross.y);
-
-            ctx.fillStyle = "blue"
-            ctx.fillRect(cross.x, 0, canvas.width, cross.y);
-
-            ctx.fillStyle = "green"
-            ctx.fillRect(0, cross.y, cross.x, canvas.height);
-
-            ctx.fillStyle = "yellow"
-            ctx.fillRect(cross.x, cross.y, canvas.width, canvas.height);
+            ctx.filter = "drop-shadow(10px 10px 10px)";
 
             photoSizes = [
                 [cross.x, cross.y],
@@ -81,7 +71,7 @@
                             console.log(quote);
                             quoteLengthPX = ctx.measureText(quote).width;
 
-                            ctx.font = "30px Comic Sans MS";
+                            ctx.font = "700 30px Comic Sans MS";
                             ctx.fillStyle = '#fff';
                             ctx.textAlign = 'center';
 
@@ -121,10 +111,10 @@
         let getPhoto = function(photoSize) {
             const photoWidth = photoSize[0],
                 photoHeight = photoSize[1];
-            const numImagesAvailable = 295;
+            const numImagesAvailable = 331;
             let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
 
-            return fetch(`https://source.unsplash.com/collection/3178572/${photoWidth}x${photoHeight}/?sig=${randomImageIndex}`);
+            return fetch(`https://source.unsplash.com/collection/357786/${photoWidth}x${photoHeight}/?sig=${randomImageIndex}`);
         }
 
     </script>
