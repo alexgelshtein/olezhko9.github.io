@@ -25,7 +25,6 @@ footer {
 
 /*header start*/
 .head-img {
-    min-height: 100vh;
     background: linear-gradient(to bottom, rgba(92, 77, 66, .7) 0, rgba(92, 77, 66, .7) 100%), url(../images/workspace.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -241,7 +240,7 @@ footer .fab {
 
     header h1 {
         letter-spacing: 0;
-        font-size: 18px;
+        font-size: 1.2em;
     }
 
     .course-header p {
