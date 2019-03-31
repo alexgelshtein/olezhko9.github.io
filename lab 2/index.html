@@ -34,7 +34,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="#description" class="nav-link active">Описание</a></li>
                         <li class="nav-item"><a href="#labs" class="nav-link">Лабораторные</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Преподаватель</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Преподаватель</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <h1 class="text-uppercase"><b>Веб разработка в университете информационных технологий, механики и оптики</b></h1>
                     <hr class="decor-hr">
                     <p>Всего за семестр нужно сдать пять лабораторных работ. При сдаче лабораторной работы после дедлайна за каждый пропуск будет отниматься по три балла за каждый долг.</p>
-                    <a href="#description" class="btn btn-header">Перейти к курсу</a>
+                    <a href="#description" class="btn btn-webdev">Перейти к курсу</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
     <section id="description">
         <div class="container text-center">
             <h2>Правила сдачи лабораторных работ</h2>
-            <hr class="decor-hr-inverse">
+            <hr class="decor-hr-white">
             <div class="row ml-auto justify-content-center">
                 <div class=" col-md-10">
 
@@ -75,33 +75,72 @@
         <div class="container text-center">
             <h2>Список лабораторных работ</h2>
             <hr class="decor-hr">
-            <div class="row">
-                <div class="col-lg-4 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 text-center">
                     <i class="fab fa-css3-alt"></i>
                     <h3>Лабораторная работа 1: Адаптивная верстка</h3>
                     <p>Нужно разработать адаптивную вёрстку компоновки (wireframe) web-приложения. В решении должно быть минимум 4 блока. Пользуясь медиа-запросом, нужно реализовать адаптивную верстку.</p>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-4 col-sm-6 text-center">
                     <i class="fab fa-bootstrap"></i>
                     <h3>Лабораторная работа 2: Одностраничный сайт</h3>
                     <p>Нужно сделать посадочную страницу для продукта или услуги с помощью CSS фреймворка (bootstrap или materialize). Страница должна быть адаптивной и органично отображаться на всех размерах экрана.</p>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-4 col-sm-6 text-center">
                     <i class="fab fa-js-square"></i>
                     <h3>Лабораторная работа 3: Генератор контента</h3>
                     <p>Требуется генерировать коллажи изображений с цитатами с помощью элемента canvas с возможностью сохранения контента на чистом javascript (без html и css).</p>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-4 col-sm-6 text-center">
                     <i class="fab fa-php"></i>
                     <h3>Лабораторная работа 4: Новостной портал</h3>
                     <p>Нужно разработать новостной портал на PHP (на чистом или с фреймворками) с админкой, из которой можно добавлять и удалять новости (без авторизации). Новость должна иметь заголовок и сам текст.</p>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-4 col-sm-6 text-center">
                     <i class="fab fa-markdown"></i>
                     <h3>Лабораторная работа 5: Markdown Editor</h3>
                     <p>Нужно реализовать функциональность просмотра и редактирования markdown документов с возможностью хранения их на сервере. То есть обычный веб-сервис без авторизации с общим списком всех md документов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Напишите преподавателю</h2>
+            <hr class="decor-hr">
+            <div class="row justify-content-center">
+                <div class="col-md-3 cols-md-4 profile">
+                    <img src="images/profile-1.png" alt="">
+                </div>
+                <div class="col-md-6 col-md-8">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameInput">Фамилия Имя</label>
+                            <input type="email" class="form-control form-border" id="nameInput" placeholder="Иван Иванов">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="messageTextarea">Сообщение преподавателю</label>
+                            <textarea class="form-control form-border" id="messageTextarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-9">
+                                <label for="courseSelect1">Курс обучения</label>
+                                <select class="form-control form-border" id="courseSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div class="col-3 btn-col">
+                                <button type="submit" class="btn btn-webdev">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
