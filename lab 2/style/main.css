@@ -2,7 +2,8 @@ img {
     max-width: 100%;
 }
 
-section {
+section,
+footer {
     padding: 7vh 0;
 }
 
@@ -113,7 +114,7 @@ header h1 {
 /*labs start*/
 
 
-.fab {
+#labs .fab {
     font-size: 4em;
     margin-bottom: 0.2em;
 }
@@ -181,6 +182,23 @@ label {
 
 /*contact end*/
 
+footer {
+    background-color: #F8F9FA;
+}
+
+footer .fab {
+    font-size: 1.7em;
+}
+
+.ref {
+    margin-right: 1em;
+    color: #FF7F50;
+}
+
+.ref:nth-child(3) {
+    margin-right: 0;
+}
+
 @media (max-width: 1200px) {
     header h1 {
         font-size: 3vw;
@@ -221,27 +239,24 @@ label {
 
 @media (max-width: 440px) {
 
-    /*
-    .head-img {
-        height: auto;
-        background: none;
-        background-color: rgba(92, 77, 66, .7);
-    }
-*/
     header h1 {
         letter-spacing: 0;
         font-size: 18px;
     }
 
     .course-header p {
-        font-size: 16px;
-    }
-
-    #description h2 {
-        font-size: 18px;
+        font-size: 1.1em;
     }
 
     #description p {
         font-size: 16px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    #labs h3 {
+        font-size: 1.5em;
     }
 }
