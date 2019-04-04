@@ -33,8 +33,22 @@ function get_article($con, $article_id) {
     return $article;
 }
 
-function add_article() {
+function add_article($con, $title, $date, $content) {
+    $title = trim($title);
+    $content = trim($content);
     
+    if ($title == "")
+        return false;
+    
+    $query = sprintf("INSERT INTO article (title, created, content) VALUES ('%s', '%s', '%s')", 
+                    mysqli_real_escape_string($con, $title), $date, mysqli_real_escape_string($con, $content));
+    
+    $result = mysqli_query($con, $query);
+    
+    if (!$result)
+        die(mysqli_error($con));
+    
+    return true;
 }
 
 ?>

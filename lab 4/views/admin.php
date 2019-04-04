@@ -11,6 +11,13 @@
     <a href="index.php">Главная</a>
     <br>
     <div>
+        <form method="post" action="admin.php?action=add">
+            <input type="text" name="title" value="" placeholder="Название статьи"><br>
+            <textarea name="content" cols="30" rows="5"></textarea><br>
+            <input type="submit" value="Добавить"><br>
+        </form>
+    </div>
+    <div>
         <table border="1">
             <tr>
                 <th>id</th>
