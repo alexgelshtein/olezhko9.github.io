@@ -1,15 +1,9 @@
 <?php
-
-function get_add_articles() {
+    require_once("database.php");
+    require_once("models/article.php");
     
-}
-
-function get_article($article_id) {
+    $con = db_connect();
+    $article = get_all_articles($con, $_GET['id']);
     
-}
-
-function add_article() {
-    
-}
-
+    echo $article;
 ?>

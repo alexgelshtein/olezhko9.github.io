@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
+<?php
+    require_once("database.php");
+    require_once("models/article.php");
+    
+    $con = db_connect();
+    $articles = get_all_articles($con);
+    echo "<p>Main page</p>";
 
-<body>
-
-    <h1>My first PHP page</h1>
-
-    <?php
-    echo "Hello World!";
-    ?>
-
-</body>
-
-</html>
+    require_once("views/articles.php");
+?>
