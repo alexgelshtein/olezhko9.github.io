@@ -3,7 +3,8 @@
     require_once("models/article.php");
     
     $con = db_connect();
-    $article = get_all_articles($con, $_GET['id']);
-    
-    echo $article;
+    $article = get_article($con, $_GET['id']);
+
+//    echo $article['title'];
+    include("views/article.php");
 ?>

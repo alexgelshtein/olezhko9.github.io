@@ -29,7 +29,7 @@ function get_article($con, $article_id) {
         die(mysqli_error($con));
     }
     
-    $article = mysqli_fetch_assoc($reslut);
+    $article = mysqli_fetch_assoc($result);
     return $article;
 }
 
