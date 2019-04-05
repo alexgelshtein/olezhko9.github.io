@@ -5,6 +5,5 @@
     $con = db_connect();
     $article = get_article($con, $_GET['id']);
 
-//    echo $article['title'];
     include("views/article.php");
 ?>

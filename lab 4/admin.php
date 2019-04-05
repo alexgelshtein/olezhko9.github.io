@@ -13,7 +13,7 @@
 
     if($action == "add") {
         if(!empty($_POST)) {
-            add_article($con, $_POST['title'], date("y-m-d"), $_POST['content']);
+            add_article($con, $_POST['title'], $_POST['content']);
             header("Location: admin.php");
         }
     } else if ($action == "delete") {

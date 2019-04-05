@@ -17,6 +17,7 @@
             <input type="submit" value="Добавить"><br>
         </form>
     </div>
+    <br>
     <div>
         <table border="1">
             <tr>
@@ -35,7 +36,6 @@
             <?php endforeach ?>
         </table>
         <br>
-        <a href="index.php?action=add">Добавить запись</a>
     </div>
 </body>
 

@@ -33,13 +33,14 @@ function get_article($con, $article_id) {
     return $article;
 }
 
-function add_article($con, $title, $date, $content) {
+function add_article($con, $title, $content) {
     $title = trim($title);
     $content = trim($content);
     
     if ($title == "")
         return false;
     
+    $date = date("y-m-d H:i:s");
     $query = sprintf("INSERT INTO article (title, created, content) VALUES ('%s', '%s', '%s')", 
                     mysqli_real_escape_string($con, $title), $date, mysqli_real_escape_string($con, $content));
     
