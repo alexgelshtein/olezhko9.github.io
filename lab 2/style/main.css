@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     max-width: 100%;
 }
@@ -249,6 +253,10 @@ footer .fab {
 
     #description p {
         font-size: 16px;
+    }
+
+    .btn-webdev {
+        width: 100%;
     }
 
     section h2 {
