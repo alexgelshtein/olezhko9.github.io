@@ -9,7 +9,7 @@
 <body>
     <h1>Страница управления постами</h1>
     <a href="index.php">Главная</a>
-    <br>
+    <br><br>
     <div>
         <form method="post" action="admin.php?action=add">
             <input type="text" name="title" value="" placeholder="Название статьи"><br>

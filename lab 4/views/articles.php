@@ -13,7 +13,8 @@
         <div class="article">
             <h2><a href="article.php?id=<?=$a['id']?>"><?=$a['title']?></a></h2>
             <em>Опубликовано: <?=$a['created']?></em>
-            <p><?=$a['content']?></p>
+            <p><?=article_preview($a['content'])?></p>
+            <br>
         </div>
         <?php endforeach ?>
     </div>

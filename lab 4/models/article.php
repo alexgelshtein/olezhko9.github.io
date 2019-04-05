@@ -65,4 +65,8 @@ function delete_article($con, $id) {
         die(mysqli_error($con));
 }
 
+function article_preview($content) {
+    return substr($content, 0, 200)."...";
+}
+
 ?>

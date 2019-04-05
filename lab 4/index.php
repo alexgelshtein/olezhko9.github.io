@@ -4,7 +4,6 @@
     
     $con = db_connect();
     $articles = get_all_articles($con);
-    echo "<p>Main page</p>";
     
     echo '<a href="admin.php">Панель администратора</a>';
     require_once("views/articles.php");
