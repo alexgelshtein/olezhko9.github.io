@@ -51,4 +51,17 @@ function add_article($con, $title, $date, $content) {
     return true;
 }
 
+
+function delete_article($con, $id) {
+    $id = (int)$id;
+    if ($id == 0)
+        return false;
+    
+    $query = sprintf("DELETE FROM article WHERE id=%d", $id);
+    $result = mysqli_query($con, $query);
+    
+    if (!$result)
+        die(mysqli_error($con));
+}
+
 ?>

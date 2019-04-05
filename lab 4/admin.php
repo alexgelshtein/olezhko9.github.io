@@ -16,6 +16,10 @@
             add_article($con, $_POST['title'], date("y-m-d"), $_POST['content']);
             header("Location: admin.php");
         }
+    } else if ($action == "delete") {
+        $id = $_GET['id'];
+        delete_article($con, $id);
+        header("Location: admin.php");
     }
     include("views/admin.php");
 ?>
