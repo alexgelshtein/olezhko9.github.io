@@ -47,7 +47,6 @@ export default {
     async getAllMarkdowns () {
       const response = await MarkdownService.fetchMarkdowns()
       this.markdowns = response.data.markdowns
-      console.log(this.markdowns.length)
     },
     async removeMarkdownFile (mdid) {
       await MarkdownService.deleteMarkdown(mdid)
