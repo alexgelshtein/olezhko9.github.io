@@ -11,11 +11,13 @@ app.use(cors());
 
 app.listen(process.env.PORT || config.port, () => console.log(`Server started on port ${config.port}`));
 
-app.get('/posts', (req, res) => {
-    res.send(
-        [{
+app.get('/markdowns', (req, res) => {
+    const response = {
+        markdowns: [{
             title: "Hello World!",
-            description: "Hi there! How are you?"
+            description: "Hi there! How are you?",
+            lastUpdate: new Date()
         }]
-    )
+    };
+    res.send(response)
 });

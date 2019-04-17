@@ -11,17 +11,20 @@
             tr
               th Название
               th Описание
+              th Обновлено
               th Действие
             tr( v-for="(md, index) in markdowns", :key="md.title" )
               td {{ md.title }}
               td {{ md.description }}
+              td {{ md.lastUpdate }}
+              td
 
-        section.panel.panel-danger( v-if="markdowns.length<1" )
-        p
-        | Здесь нет ни одного файла. Добавьте свой!
-        div
-        router-link( :to="{ name: 'NewPost' }" )
-          | Создать файл
+        section.panel.panel-danger( v-if="!markdowns.length" )
+          p
+          | Здесь нет ни одного файла. Добавьте свой!
+          div
+          router-link( :to="{ name: 'NewPost' }" )
+            | Создать файл
 </template>
 
 <script>
@@ -37,7 +40,7 @@ export default {
     async getAllMarkdowns () {
       const response = await MarkdownService.fetchMarkdowns()
       this.markdowns = response.data.markdowns
-      console.log(this.markdowns)
+      console.log(this.markdowns.length)
     }
   },
   mounted () {
