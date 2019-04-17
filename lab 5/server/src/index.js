@@ -9,6 +9,7 @@ const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(require('./routes/markdowns'))
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.dbURL + config.dbName, config.dbOptions)
@@ -19,14 +20,3 @@ mongoose.connection
         app.listen(process.env.PORT || config.port, () => console.log(`Server started on port ${config.port}`));
     })
     .on('error', error => console.warn(error))
-
-app.get('/markdowns', (req, res) => {
-    const response = {
-        markdowns: [{
-            title: "Hello World!",
-            description: "Hi there! How are you?",
-            lastUpdate: new Date()
-        }]
-    };
-    res.send(response)
-});
