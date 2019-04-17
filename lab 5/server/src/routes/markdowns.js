@@ -22,15 +22,15 @@ router.post('/markdowns', (req, res) => {
     })
 })
 
+// get all files
 router.get('/markdowns', (req, res) => {
-    const response = {
-        markdowns: [{
-            title: "Hello World!",
-            description: "Hi there! How are you?",
-            lastUpdate: new Date()
-        }]
-    };
-    res.send(response)
+    MarkdownFile.find({}, 'title description lastUpdate', (err, data) => {
+        if (err) {
+            res.sendStatus(500)
+        } else {
+            res.send({ markdowns: data })
+        }
+    }).sort({lastUpdate: -1})
 });
 
 module.exports = router
