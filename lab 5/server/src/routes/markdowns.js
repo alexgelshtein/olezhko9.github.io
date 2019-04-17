@@ -3,6 +3,25 @@ const MarkdownFile = require('../models/md-model')
 
 const router = express.Router()
 
+// create file
+router.post('/markdowns', (req, res) => {
+    const mdFile = new MarkdownFile({
+        title: req.body.title,
+        description: req.body.description,
+        content: req.body.content,
+        lastUpdate: new Date()
+    })
+    mdFile.save((err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send({
+                success: true,
+            })
+        }
+    })
+})
+
 router.get('/markdowns', (req, res) => {
     const response = {
         markdowns: [{
