@@ -67,4 +67,16 @@ router.put('/markdowns/:id', (req, res) => {
         }
     })
 })
+
+// delete by id
+router.delete('/markdowns/:id', (req, res) => {
+    MarkdownFile.remove({ _id: req.params.id }, err => {
+        if (err) {
+            res.sendStatus(500)
+        } else {
+            res.sendStatus(200)
+        }
+    })
+})
+
 module.exports = router

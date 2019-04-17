@@ -12,5 +12,8 @@ export default {
   },
   updateMarkdown (params) {
     return api().put(`markdowns/${params.id}`, params)
+  },
+  deleteMarkdown (id) {
+    return api().delete(`markdowns/${id}`)
   }
 }
