@@ -5,6 +5,9 @@
         h1
           | MEVN markdown-редактор
         section.panel.panel-success( v-if="markdowns.length" )
+          div
+            router-link( :to="{ name: 'New Markdown' }" )
+              | Создать файл
           .panel-heading
             | Список файлов
           table.table.table-striped
@@ -27,8 +30,8 @@
           p
           | Здесь нет ни одного файла. Добавьте свой!
           div
-          router-link( :to="{ name: 'NewPost' }" )
-            | Создать файл
+            router-link( :to="{ name: 'New Markdown' }" )
+              | Создать файл
 </template>
 
 <script>
