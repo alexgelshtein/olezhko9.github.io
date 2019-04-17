@@ -15,9 +15,7 @@ router.post('/markdowns', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.send({
-                success: true,
-            })
+            res.sendStatus(200)
         }
     })
 })
@@ -33,4 +31,40 @@ router.get('/markdowns', (req, res) => {
     }).sort({lastUpdate: -1})
 });
 
+// get file by id
+router.get('/markdowns/:id', (req, res) => {
+    MarkdownFile.findById(req.params.id, 'title description content', (err, mdFile) => {
+        if (err) {
+            res.sendStatus(500)
+        } else {
+            res.send(mdFile)
+        }
+    })
+})
+
+// update file by id
+router.put('/markdowns/:id', (req, res) => {
+    MarkdownFile.findById(req.params.id, 'title description content', (err, mdFile) => {
+        if (err) {
+            console.log(err)
+        } else {
+            if (req.body.title) {
+                mdFile.title = req.body.title
+            }
+            if (req.body.description) {
+                mdFile.description = req.body.description
+            }
+            if (req.body.content) {
+                mdFile.content = req.body.content
+            }
+            mdFile.save(err => {
+                if (err) {
+                    res.sendStatus(500)
+                } else {
+                    res.sendStatus(200)
+                }
+            })
+        }
+    })
+})
 module.exports = router

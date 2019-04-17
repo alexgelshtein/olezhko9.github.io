@@ -1,6 +1,7 @@
 import Start from '@/components/HelloWorld'
 import MarkdownsAll from '@/components/MarkdownsAll'
 import NewMarkdown from '@/components/NewMarkdown'
+import EditMarkdown from '../components/EditMarkdown'
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     path: '/markdowns/new',
     name: 'New Markdown',
     component: NewMarkdown
+  },
+  {
+    path: '/markdowns/:id',
+    name: 'Edit Markdown',
+    component: EditMarkdown
   }
 ]
 

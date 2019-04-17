@@ -18,6 +18,8 @@
               td {{ md.description }}
               td {{ md.lastUpdate }}
               td
+                router-link( :to="{ name: 'Edit Markdown', params: { id: md._id } }" )
+                  | Редактировать
 
         section.panel.panel-danger( v-if="!markdowns.length" )
           p
