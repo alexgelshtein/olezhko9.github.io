@@ -4,3 +4,6 @@
 /bower_components/
 
 .idea/*
+
+lab 5/client/node_modules
+lab 5/server/node_modules
